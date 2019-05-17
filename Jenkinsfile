@@ -74,7 +74,7 @@ disableConcurrentBuilds()
                            slackSend (color: "#f1502f", message: "Git URL is : ${env.GIT_URL}")
                            slackSend (color: "add8e6", message: 'Calculator-munit-mule4_qa Deployment Started')
                            
-		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=dev'
+		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=qa'
                            }  
                       }	
 				   stage ('Upload Files To Artifactory'){
@@ -131,7 +131,7 @@ disableConcurrentBuilds()
                            slackSend (color: "#f1502f", message: "Git URL is : ${env.GIT_URL}")
                            slackSend (color: "add8e6", message: 'Calculator-munit-mule4_prod Deployment Started')
                            
-		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=dev'
+		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=prod'
                            }  
                       }	
 				   stage ('Upload Files To Artifactory'){
