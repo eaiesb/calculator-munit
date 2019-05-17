@@ -34,9 +34,7 @@ disableConcurrentBuilds()
                            def buildInfo1 = server.upload spec: uploadSpec
 					}
 					}
-					
-				  }
-				  post {
+					post {
 	             failure {
 		                  slackSend (color: "0000ff", message: 'Calculator-munit-mule4_dev Build failed')
                           emailext attachLog: true, body: '''The Failed build details are as follows:<br> <br>
@@ -64,6 +62,8 @@ disableConcurrentBuilds()
                         }
 		
 		              }
+				  }
+				  
 		      }
 		   
 		   }
