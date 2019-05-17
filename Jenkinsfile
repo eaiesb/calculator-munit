@@ -167,10 +167,6 @@ stage ("calculator-munit-mule4"){
          }
 		
 		 }
-	   }
-		 
-	   }
-	   }  	  
-	 }
+	   }		 	   	     	  	 
 }
 }
