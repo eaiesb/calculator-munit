@@ -8,7 +8,7 @@ options {
 disableConcurrentBuilds()
 }
         stages {
-		    stage ("calculator-munit-mule4"){
+		    stage ("calculator-munit-mule4_dev"){
 			   stages {
 			      stage("Build calculator-munit-mule4_dev source code"){
 				      steps {
@@ -66,6 +66,8 @@ disableConcurrentBuilds()
                         }
 		
 		              }
+					  }
+					 stage("calculator-munit-mule4_qa"){
                      stages{
 					    stage("Build calculator-munit-mule4_qa source code"){
 				      steps {
@@ -121,6 +123,8 @@ disableConcurrentBuilds()
                         }
 		
 		              }	
+					  }
+					  stage("calculator-munit-mule4_prod"){
                      stages{
 					    stage("Build calculator-munit-mule4_prod source code"){
 				      steps {
@@ -176,7 +180,7 @@ disableConcurrentBuilds()
                         }
 		
 		              }				   					  
-											  
+					}						  
 			}
 		}
 }		
