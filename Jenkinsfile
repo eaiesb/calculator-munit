@@ -18,8 +18,7 @@ disableConcurrentBuilds()
 		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=dev'
                            }  
                       }
-					 }
-               stages{					 
+					 					 
 				   stage ('Upload Files To Artifactory'){
 				      steps {
 					  script{
@@ -38,7 +37,7 @@ disableConcurrentBuilds()
 					  }
 				   }
 				   }
-				   }
+				   
 				   post {
 	             failure {
 		                  slackSend (color: "0000ff", message: 'Calculator-munit-mule4_dev Build failed')
@@ -68,7 +67,7 @@ disableConcurrentBuilds()
 		
 		              }
                      
-				  
+				 } 
 			   
 		    }
         
