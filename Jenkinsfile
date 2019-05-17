@@ -28,7 +28,7 @@ disableConcurrentBuilds()
                          "files": [
                            {
                           "pattern": "**/*.jar",
-                          "target": "generic-local/calculator-munit-mule4_$BUILD_NUMBER_dev/calculator-munit-mule4.jar"
+                          "target": "generic-local/calculator-munit-mule4_dev_$BUILD_NUMBER/calculator-munit-mule4.jar"
                             }
                            ]
                          }"""                 
