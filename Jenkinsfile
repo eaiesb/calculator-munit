@@ -18,6 +18,7 @@ disableConcurrentBuilds()
 		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=dev'
                            }  
                       }
+					  }
 				   stage ('Upload Files To Artifactory'){
 				      steps {
 					  script{
@@ -64,7 +65,7 @@ disableConcurrentBuilds()
 		
 		              }
                      
-				  }
+				  
 			   }
 		    }
         
