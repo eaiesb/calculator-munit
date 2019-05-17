@@ -18,23 +18,24 @@ disableConcurrentBuilds()
 		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=dev'
                            }  
                       }
-					  }
+					  
 				   stage ('Upload Files To Artifactory'){
 				      steps {
 					  script{
 					     sh "echo ${env.GIT_URL} > /tmp/giturl.txt"
-                           def server = Artifactory.server 'artifactory'
-                           def uploadSpec = """{
-                           "files": [
+                         def server = Artifactory.server 'artifactory'
+                         def uploadSpec = """{
+                         "files": [
                            {
-                           "pattern": "**/*.jar",
-                           "target": "generic-local/Calculator-munit-mule4_$BUILD_NUMBER_dev/Calculator-munit-mule4.jar"
-                           }
+                          "pattern": "**/*.jar",
+                          "target": "generic-local/ami-api/ami-api.jar"
+                            }
                            ]
-                           }"""                 
-                                def buildInfo1 = server.upload spec: uploadSpec
+                         }"""                 
+                            def buildInfo1 = server.upload spec: uploadSpec
 					  }
 					  }
+				   }
 				   }
 				   post {
 	             failure {
@@ -66,7 +67,7 @@ disableConcurrentBuilds()
 		              }
                      
 				  
-			   }
+			   
 		    }
-        
+        }
 }
