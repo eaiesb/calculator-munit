@@ -34,6 +34,7 @@ stages {
                            def buildInfo1 = server.upload spec: uploadSpec
 	                    }
 	                    }
+					 }
 	             post {
 	             failure {
 		                  slackSend (color: "0000ff", message: 'Calculator-munit-mule4_dev Build failed')
@@ -86,6 +87,7 @@ stages {
                          def buildInfo1 = server.upload spec: uploadSpec
 	                     }
 	                    }
+						}
 	                    post {
 	                     failure {
 		                       slackSend (color: "0000ff", message: 'Calculator-munit-mule4_qa Build failed')
@@ -139,6 +141,7 @@ stages {
                           def buildInfo1 = server.upload spec: uploadSpec
 	                      }
 	                      } 
+						  }
 	                   post {
 	                     failure {
 		                         slackSend (color: "0000ff", message: 'Calculator-munit-mule4_prod Build failed')
@@ -165,10 +168,11 @@ stages {
                                  ''', subject: 'Jenkins ${BUILD_STATUS} [#${BUILD_NUMBER}] - ${PROJECT_NAME} ${ENV, var="GIT_URL"}', to: 'srikanth.bathini@eaiesb.com'    
                                  slackSend (color: "#32CD32", message: 'Calculator-munit-mule4_prod Deployment is Sucessful')
          }
+		 }
 		
 		 }
 	   }
 	  
-	}
 }
+
 
