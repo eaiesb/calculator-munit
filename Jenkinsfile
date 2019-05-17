@@ -120,7 +120,7 @@ disableConcurrentBuilds()
                         slackSend (color: "#32CD32", message: 'Calculator-munit-mule4_qa Deployment is Sucessful')
                         }
 		
-		              }			
+		              }	
                      stages{
 					    stage("Build calculator-munit-mule4_prod source code"){
 				      steps {
@@ -176,10 +176,7 @@ disableConcurrentBuilds()
                         }
 		
 		              }				   					  
-						
-					 
-				 } 
-			   
-		    }
-        
-}
+											  
+			}
+		}
+}		
