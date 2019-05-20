@@ -36,9 +36,9 @@ disableConcurrentBuilds()
 					  }
 					  }
 				   }
-				   stage('Sending Mail')
+				   stage('Sending Mail'){
 				   steps{
-                   {
+                   
                       emailext attachLog: true, 
                       body: ''' Hi Team,
                       The source code is uploaded and is built from DEV group and waiting for your approval to forward to QA Environment''', 
@@ -46,12 +46,12 @@ disableConcurrentBuilds()
                    }
 				   }
                  stage('approve')
-				  steps{
+				  
                    timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'PRODGroup'
                       }		
-                     }					  
+                     					  
 				   }
 				   
 				   post {
