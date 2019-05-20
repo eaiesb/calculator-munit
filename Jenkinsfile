@@ -38,8 +38,7 @@ disableConcurrentBuilds()
 				   }
 				   stage('Sending Mail'){
 				         steps{
-						  emailext attachLog: true, 
-                        emailext attachLog: true, mimeType: 'text/html', body: '''The jenkins build details are as follows:<br> <br>
+						  emailext attachLog: true, mimeType: 'text/html', body: '''The jenkins build details are as follows:<br> <br>
                          <table border="1">
                          <tr><td style="background-color:#33339F;color:white"><b>Job Name</b></td><td>$JOB_NAME</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build Number</b></td><td>$BUILD_NUMBER</td></tr>
