@@ -36,6 +36,18 @@ disableConcurrentBuilds()
 					  }
 					  }
 				   }
+				  stage('Sending Mail')
+                   {
+                      emailext attachLog: true, 
+                      body: ''' Hi Team,
+                      The source code is uploaded and is built from DEV group and waiting for your approval to forward to QA Environment''', 
+                      subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb@eaiesb.com'
+                   }
+                 stage('approve')
+                   timeout(time: 7, unit: 'DAYS') 
+                     {
+                        input message: 'Do you want to deploy?', submitter: 'DEVGroup'
+                      }
 				   }
 				   
 				   post {
@@ -74,7 +86,7 @@ disableConcurrentBuilds()
                            slackSend (color: "#f1502f", message: "Git URL is : ${env.GIT_URL}")
                            slackSend (color: "add8e6", message: 'Calculator-munit-mule4_qa Deployment Started')
                            
-		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=qa'
+		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=dev'
                            }  
                       }	
 				   stage ('Upload Files To Artifactory'){
@@ -94,6 +106,18 @@ disableConcurrentBuilds()
 					  }
 					  }
 				   }
+				  stage('Sending Mail')
+                   {
+                      emailext attachLog: true, 
+                      body: ''' Hi Team,
+                      The source code is uploaded and is built from DEV group and waiting for your approval to forward to QA Environment''', 
+                      subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb@eaiesb.com'
+                   }
+                 stage('approve')
+                   timeout(time: 7, unit: 'DAYS') 
+                     {
+                        input message: 'Do you want to deploy?', submitter: 'QAGroup'
+                      }				   
 				   }
 				   post {
 	             failure {
@@ -131,7 +155,7 @@ disableConcurrentBuilds()
                            slackSend (color: "#f1502f", message: "Git URL is : ${env.GIT_URL}")
                            slackSend (color: "add8e6", message: 'Calculator-munit-mule4_prod Deployment Started')
                            
-		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=prod'
+		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=dev'
                            }  
                       }	
 				   stage ('Upload Files To Artifactory'){
@@ -151,6 +175,18 @@ disableConcurrentBuilds()
 					  }
 					  }
 				   }
+				  stage('Sending Mail')
+                   {
+                      emailext attachLog: true, 
+                      body: ''' Hi Team,
+                      The source code is uploaded and is built from DEV group and waiting for your approval to forward to QA Environment''', 
+                      subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb@eaiesb.com'
+                   }
+                 stage('approve')
+                   timeout(time: 7, unit: 'DAYS') 
+                     {
+                        input message: 'Do you want to deploy?', submitter: 'PRODGroup'
+                      }				   
 				   }
 				   post {
 	             failure {
