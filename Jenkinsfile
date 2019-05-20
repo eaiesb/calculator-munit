@@ -37,17 +37,21 @@ disableConcurrentBuilds()
 					  }
 				   }
 				   stage('Sending Mail')
+				   steps{
                    {
                       emailext attachLog: true, 
                       body: ''' Hi Team,
                       The source code is uploaded and is built from DEV group and waiting for your approval to forward to QA Environment''', 
                       subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb@eaiesb.com'
                    }
+				   }
                  stage('approve')
+				  steps{
                    timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'PRODGroup'
-                      }				   
+                      }		
+                     }					  
 				   }
 				   
 				   post {
