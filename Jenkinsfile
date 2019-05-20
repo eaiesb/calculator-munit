@@ -46,7 +46,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>http://jenkins.eaiesb.com:8891/blue/organizations/jenkins/${JOB_NAME}/detail/${JOB_NAME}/${BUILD_NUMBER}/pipeline
 </td></tr>
-                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'QAGroup'
+                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'kiran.padam@eaiesb.com'; 'manoj.gundam@eaiesb.com'
 					  timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'DEVGroup'
