@@ -45,7 +45,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>Build Number</b></td><td>$BUILD_NUMBER</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
-                         </table>''', subject: subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
+                         </table>''', subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
 					  timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'DEVGroup'
