@@ -46,7 +46,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>http://jenkins.eaiesb.com:8891/blue/organizations/jenkins/${JOB_NAME}/detail/${JOB_NAME}/${BUILD_NUMBER}/pipeline
 </td></tr>
-                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
+                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'QAGroup'
 					  timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'DEVGroup'
@@ -119,7 +119,8 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>Job Name</b></td><td>$JOB_NAME</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build Number</b></td><td>$BUILD_NUMBER</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
-                         <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
+                         <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>http://jenkins.eaiesb.com:8891/blue/organizations/jenkins/${JOB_NAME}/detail/${JOB_NAME}/${BUILD_NUMBER}/pipeline
+</td></tr>
                          </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'					
 					  timeout(time: 7, unit: 'DAYS') 
                      {
@@ -192,7 +193,8 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>Job Name</b></td><td>$JOB_NAME</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build Number</b></td><td>$BUILD_NUMBER</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
-                         <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
+                         <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>http://jenkins.eaiesb.com:8891/blue/organizations/jenkins/${JOB_NAME}/detail/${JOB_NAME}/${BUILD_NUMBER}/pipeline
+</td></tr>
                          </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
 					  timeout(time: 7, unit: 'DAYS') 
                      {
