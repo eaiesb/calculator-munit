@@ -39,13 +39,13 @@ disableConcurrentBuilds()
 				   
 					stage('approve'){
 					steps{
-					emailext attachLog: true, mimeType: 'text/html', body: '''The jenkins build details are as follows:<br> <br>
+					emailext attachLog: true, mimeType: 'text/html', body: '''The source code is uploaded and is built from DEV group and waiting for your approval to forward to QA Environment:<br> <br>
                          <table border="1">
                          <tr><td style="background-color:#33339F;color:white"><b>Job Name</b></td><td>$JOB_NAME</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build Number</b></td><td>$BUILD_NUMBER</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
-                         </table>''', subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
+                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
 					  timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'DEVGroup'
@@ -110,16 +110,16 @@ disableConcurrentBuilds()
 					  }
 					  }
 				   }
-				   stage('Sending Mail'){
-				         steps{
-						  emailext attachLog: true, 
-                      body: ''' Hi Team,
-                      The source code is uploaded and is built from QA group and waiting for your approval to forward to QA Environment''', 
-                      subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
-						 }
-						 }
+				   
 					stage('approve'){
 					steps{
+					emailext attachLog: true, mimeType: 'text/html', body: '''The source code is uploaded and is built from DEV group and waiting for your approval to forward to QA Environment:<br> <br>
+                         <table border="1">
+                         <tr><td style="background-color:#33339F;color:white"><b>Job Name</b></td><td>$JOB_NAME</td></tr>
+                         <tr><td style="background-color:#33339F;color:white"><b>Build Number</b></td><td>$BUILD_NUMBER</td></tr>
+                         <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
+                         <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
+                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'					
 					  timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'QAGroup'
@@ -183,16 +183,16 @@ disableConcurrentBuilds()
 					  }
 					  }
 				   }
-				   stage('Sending Mail'){
-				         steps{
-						  emailext attachLog: true, 
-                      body: ''' Hi Team,
-                      The source code is uploaded and is built from PROD group and waiting for your approval to forward to PROD Environment''', 
-                      subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
-						 }
-						 }
+
 					stage('approve'){
 					steps{
+						emailext attachLog: true, mimeType: 'text/html', body: '''The source code is uploaded and is built from QA group and waiting for your approval to forward to PROD Environment:<br> <br>
+                         <table border="1">
+                         <tr><td style="background-color:#33339F;color:white"><b>Job Name</b></td><td>$JOB_NAME</td></tr>
+                         <tr><td style="background-color:#33339F;color:white"><b>Build Number</b></td><td>$BUILD_NUMBER</td></tr>
+                         <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
+                         <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
+                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
 					  timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'PRODGroup'
