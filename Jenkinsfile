@@ -115,7 +115,7 @@ disableConcurrentBuilds()
 						  emailext attachLog: true, 
                       body: ''' Hi Team,
                       The source code is uploaded and is built from QA group and waiting for your approval to forward to QA Environment''', 
-                      subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
+                      subject: 'Waiting For Approval', to: 'manoj.gundam@eaiesb.com'
 						 }
 						 }
 					stage('approve'){
@@ -188,7 +188,7 @@ disableConcurrentBuilds()
 						  emailext attachLog: true, 
                       body: ''' Hi Team,
                       The source code is uploaded and is built from PROD group and waiting for your approval to forward to PROD Environment''', 
-                      subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
+                      subject: 'Waiting For Approval', to: 'kiran.padam@eaiesb.com'
 						 }
 						 }
 					stage('approve'){
