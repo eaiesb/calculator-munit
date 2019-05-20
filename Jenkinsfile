@@ -41,7 +41,7 @@ disableConcurrentBuilds()
 						  emailext attachLog: true, 
                       body: ''' Hi Team,
                       The source code is uploaded and is built from DEV group and waiting for your approval to forward to QA Environment''',
-					     {
+					  emailext attachLog: true, mimeType: 'text/html', body: '''The jenkins build details are as follows:<br> <br>  
                          <table border="1">
                          <tr><td style="background-color:#33339F;color:white"><b>Job Name</b></td><td>$JOB_NAME</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build Number</b></td><td>$BUILD_NUMBER</td></tr>
@@ -49,7 +49,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                          </table>					  
                       subject: '$JOB_NAME job Waiting For DEV Approval', to: 'srikanth.bathini@eaiesb.com'
-					  }
+					  
 						 }
 						 }
 					stage('approve'){
