@@ -45,9 +45,8 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                          </table>
-                         ''', subject: 'Jenkins ${BUILD_STATUS} [#${BUILD_NUMBER}] - ${PROJECT_NAME} ${ENV, var="GIT_URL"}', to: 'srikanth.bathini@eaiesb.com'  
-                      The source code is uploaded and is built from DEV group and waiting for your approval to forward to QA Environment''', 
-                      subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
+                         ''', subject: subject: 'Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'  
+                      
 						 }
 						 }
 					stage('approve'){
