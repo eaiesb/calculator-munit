@@ -65,7 +65,7 @@ disableConcurrentBuilds()
                           <tr><td style="background-color:white;color:red"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                           <tr><td style="background-color:white;color:red"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                           </table>
-                          ''', subject: 'ami-api Deployment Status', to: 'srikanth.bathini@eaiesb.com'
+                          ''', subject: 'calculator-munit-mule4_dev Deployment Status', to: 'srikanth.bathini@eaiesb.com'
                           slackSend (color: "#FF0001",message: 'Calculator-munit-mule4_dev Deployment Failed')
                           }
 		         success {
@@ -91,7 +91,7 @@ disableConcurrentBuilds()
                            slackSend (color: "#f1502f", message: "Git URL is : ${env.GIT_URL}")
                            slackSend (color: "add8e6", message: 'Calculator-munit-mule4_qa Deployment Started')
                            
-		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=dev'
+		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=qa'
                            }  
                       }	
 				   stage ('Upload Files To Artifactory'){
@@ -139,7 +139,7 @@ disableConcurrentBuilds()
                           <tr><td style="background-color:white;color:red"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                           <tr><td style="background-color:white;color:red"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                           </table>
-                          ''', subject: 'ami-api Deployment Status', to: 'srikanth.bathini@eaiesb.com'
+                          ''', subject: 'calculator-munit-mule4_qa Deployment Status', to: 'srikanth.bathini@eaiesb.com'
                           slackSend (color: "#FF0001",message: 'Calculator-munit-mule4_qa Deployment Failed')
                           }
 		         success {
@@ -165,7 +165,7 @@ disableConcurrentBuilds()
                            slackSend (color: "#f1502f", message: "Git URL is : ${env.GIT_URL}")
                            slackSend (color: "add8e6", message: 'Calculator-munit-mule4_prod Deployment Started')
                            
-		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=dev'
+		                   sh '/devops/maven/apache-maven-3.3.9/bin/mvn clean package mule:deploy -Denv=prod'
                            }  
                       }	
 				   stage ('Upload Files To Artifactory'){
@@ -213,7 +213,7 @@ disableConcurrentBuilds()
                           <tr><td style="background-color:white;color:red"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                           <tr><td style="background-color:white;color:red"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                           </table>
-                          ''', subject: 'ami-api Deployment Status', to: 'srikanth.bathini@eaiesb.com'
+                          ''', subject: 'calculator-munit-mule4_prod Deployment Status', to: 'srikanth.bathini@eaiesb.com'
                           slackSend (color: "#FF0001",message: 'Calculator-munit-mule4_prod Deployment Failed')
                           }
 		         success {
