@@ -46,7 +46,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>http://jenkins.eaiesb.com:8891/blue/organizations/jenkins/${JOB_NAME}/detail/${JOB_NAME}/${BUILD_NUMBER}/pipeline
 </td></tr>
-                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'qagroup@eaiesb.com'
+                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'kiran.padam@eaiesb.com,manoj.gundam@eaiesb.com'
 					  timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'DEVGroup'
@@ -65,7 +65,7 @@ disableConcurrentBuilds()
                           <tr><td style="background-color:white;color:red"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                           <tr><td style="background-color:white;color:red"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                           </table>
-                          ''', subject: 'calculator-munit-mule4_dev Deployment Status', to: 'srikanth.bathini@eaiesb.com'
+                          ''', subject: 'calculator-munit-mule4_dev Deployment Status', to: 'kiran.padam@eaiesb.com,manoj.gundam@eaiesb.com,srikanth.bathini@eaiesb.com'
                           slackSend (color: "#FF0001",message: 'Calculator-munit-mule4_dev Deployment Failed')
                           }
 		         success {
@@ -78,7 +78,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                          </table>
-                         ''', subject: 'Jenkins ${BUILD_STATUS} [#${BUILD_NUMBER}] - ${PROJECT_NAME} ${ENV, var="GIT_URL"}', to: 'srikanth.bathini@eaiesb.com'    
+                         ''', subject: 'Jenkins ${BUILD_STATUS} [#${BUILD_NUMBER}] - ${PROJECT_NAME} ${ENV, var="GIT_URL"}', to: 'kiran.padam@eaiesb.com,manoj.gundam@eaiesb.com,srikanth.bathini@eaiesb.com'    
                         slackSend (color: "#32CD32", message: 'Calculator-munit-mule4_dev Deployment is Sucessful')
                         }
 		
@@ -121,7 +121,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>http://jenkins.eaiesb.com:8891/blue/organizations/jenkins/${JOB_NAME}/detail/${JOB_NAME}/${BUILD_NUMBER}/pipeline
 </td></tr>
-                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'					
+                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'kiran.padam@eaiesb.com,manoj.gundam@eaiesb.com,srikanth.bathini@eaiesb.com'					
 					  timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'QAGroup'
@@ -139,7 +139,7 @@ disableConcurrentBuilds()
                           <tr><td style="background-color:white;color:red"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                           <tr><td style="background-color:white;color:red"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                           </table>
-                          ''', subject: 'calculator-munit-mule4_qa Deployment Status', to: 'srikanth.bathini@eaiesb.com'
+                          ''', subject: 'calculator-munit-mule4_qa Deployment Status', to: 'kiran.padam@eaiesb.com,manoj.gundam@eaiesb.com,srikanth.bathini@eaiesb.com'
                           slackSend (color: "#FF0001",message: 'Calculator-munit-mule4_qa Deployment Failed')
                           }
 		         success {
@@ -152,7 +152,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                          </table>
-                         ''', subject: 'Jenkins ${BUILD_STATUS} [#${BUILD_NUMBER}] - ${PROJECT_NAME} ${ENV, var="GIT_URL"}', to: 'srikanth.bathini@eaiesb.com'    
+                         ''', subject: 'Jenkins ${BUILD_STATUS} [#${BUILD_NUMBER}] - ${PROJECT_NAME} ${ENV, var="GIT_URL"}', to: 'kiran.padam@eaiesb.com,manoj.gundam@eaiesb.com,srikanth.bathini@eaiesb.com'    
                         slackSend (color: "#32CD32", message: 'Calculator-munit-mule4_qa Deployment is Sucessful')
                         }
 		
@@ -195,7 +195,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>http://jenkins.eaiesb.com:8891/blue/organizations/jenkins/${JOB_NAME}/detail/${JOB_NAME}/${BUILD_NUMBER}/pipeline
 </td></tr>
-                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'srikanth.bathini@eaiesb.com'
+                         </table>''', subject: '$JOB_NAME Job Waiting For Approval', to: 'kiran.padam@eaiesb.com,manoj.gundam@eaiesb.com,srikanth.bathini@eaiesb.com'
 					  timeout(time: 7, unit: 'DAYS') 
                      {
                         input message: 'Do you want to deploy?', submitter: 'PRODGroup'
@@ -213,7 +213,7 @@ disableConcurrentBuilds()
                           <tr><td style="background-color:white;color:red"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                           <tr><td style="background-color:white;color:red"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                           </table>
-                          ''', subject: 'calculator-munit-mule4_prod Deployment Status', to: 'srikanth.bathini@eaiesb.com'
+                          ''', subject: 'calculator-munit-mule4_prod Deployment Status', to: 'kiran.padam@eaiesb.com,manoj.gundam@eaiesb.com,srikanth.bathini@eaiesb.com'
                           slackSend (color: "#FF0001",message: 'Calculator-munit-mule4_prod Deployment Failed')
                           }
 		         success {
@@ -226,7 +226,7 @@ disableConcurrentBuilds()
                          <tr><td style="background-color:#33339F;color:white"><b>GIT URL</b></td><td>${FILE, path="/tmp/giturl.txt"}</td></tr>
                          <tr><td style="background-color:#33339F;color:white"><b>Build URL</b></td><td>$BUILD_URL</td></tr>
                          </table>
-                         ''', subject: 'Jenkins ${BUILD_STATUS} [#${BUILD_NUMBER}] - ${PROJECT_NAME} ${ENV, var="GIT_URL"}', to: 'srikanth.bathini@eaiesb.com'    
+                         ''', subject: 'Jenkins ${BUILD_STATUS} [#${BUILD_NUMBER}] - ${PROJECT_NAME} ${ENV, var="GIT_URL"}', to: 'kiran.padam@eaiesb.com,manoj.gundam@eaiesb.com,srikanth.bathini@eaiesb.com'    
                         slackSend (color: "#32CD32", message: 'Calculator-munit-mule4_prod Deployment is Sucessful')
                         }
 		
